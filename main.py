@@ -16,7 +16,7 @@ def recommend():
     # user_input = request.get_json()
     # title = user_input['title']
     #
-    test_data = data["название"].iloc[10]
+    test_data = data["название"].iloc[22]
 
     result = get_recommendations(test_data, tfidf_matrix)
     end_result = {
