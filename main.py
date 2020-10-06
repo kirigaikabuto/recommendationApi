@@ -11,12 +11,11 @@ data = pd.read_csv("../RecommendedSystem/data.csv")
 tfidf_matrix = pickle.load(open('tfidf_matrix.pickle', 'rb'))
 
 
-@app.route("/api/v1/recommend/", methods=["GET"])
+@app.route("/api/v1/recommend/", methods=["POST"])
 def recommend():
-    # user_input = request.get_json()
-    # title = user_input['title']
-    #
-    test_data = data["название"].iloc[22]
+    user_input = request.get_json()
+    title = user_input['title']
+    test_data = title
 
     result = get_recommendations(test_data, tfidf_matrix)
     end_result = {
